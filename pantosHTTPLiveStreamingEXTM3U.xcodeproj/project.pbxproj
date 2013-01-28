@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E39405B116B6BF7B003385A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405B016B6BF7B003385A3 /* Foundation.framework */; };
+		E39405C016B6BF7B003385A3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405BF16B6BF7B003385A3 /* SenTestingKit.framework */; };
+		E39405C316B6BF7B003385A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405B016B6BF7B003385A3 /* Foundation.framework */; };
+		E39405C616B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405AD16B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a */; };
+		E39405CC16B6BF7B003385A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E39405CA16B6BF7B003385A3 /* InfoPlist.strings */; };
+		E39405CF16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405CE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.m */; };
+		E39405E816B6BF9B003385A3 /* EXTINF.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405DA16B6BF9B003385A3 /* EXTINF.m */; };
+		E39405E916B6BF9B003385A3 /* EXTM3U.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405DC16B6BF9B003385A3 /* EXTM3U.m */; };
+		E39405EA16B6BF9B003385A3 /* EXTXKEY.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405DE16B6BF9B003385A3 /* EXTXKEY.m */; };
+		E39405EB16B6BF9B003385A3 /* EXTXMEDIASEQUENCE.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405E016B6BF9B003385A3 /* EXTXMEDIASEQUENCE.m */; };
+		E39405EC16B6BF9B003385A3 /* EXTXSTREAMINF.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405E216B6BF9B003385A3 /* EXTXSTREAMINF.m */; };
+		E39405ED16B6BF9B003385A3 /* EXTXTARGETDURATION.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405E416B6BF9B003385A3 /* EXTXTARGETDURATION.m */; };
+		E39405EE16B6BF9B003385A3 /* EXTXVERSION.m in Sources */ = {isa = PBXBuildFile; fileRef = E39405E616B6BF9B003385A3 /* EXTXVERSION.m */; };
+		E394060916B6BFF6003385A3 /* pantosHTTPLiveStreamingEXTM3U.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405B516B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394060E16B6C09E003385A3 /* EXTINF.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405D916B6BF9B003385A3 /* EXTINF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394060F16B6C09E003385A3 /* EXTM3U.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405DB16B6BF9B003385A3 /* EXTM3U.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061016B6C09E003385A3 /* EXTXKEY.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405DD16B6BF9B003385A3 /* EXTXKEY.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061116B6C09E003385A3 /* EXTXMEDIASEQUENCE.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405DF16B6BF9B003385A3 /* EXTXMEDIASEQUENCE.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061216B6C09E003385A3 /* EXTXSTREAMINF.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405E116B6BF9B003385A3 /* EXTXSTREAMINF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061316B6C09E003385A3 /* EXTXTARGETDURATION.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405E316B6BF9B003385A3 /* EXTXTARGETDURATION.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061416B6C09E003385A3 /* EXTXVERSION.h in Headers */ = {isa = PBXBuildFile; fileRef = E39405E516B6BF9B003385A3 /* EXTXVERSION.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E394061C16B6C0FA003385A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405B016B6BF7B003385A3 /* Foundation.framework */; };
+		E394061E16B6C0FA003385A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E394061D16B6C0FA003385A3 /* CoreGraphics.framework */; };
+		E394062416B6C0FA003385A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E394062216B6C0FA003385A3 /* InfoPlist.strings */; };
+		E394062616B6C0FA003385A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E394062516B6C0FA003385A3 /* main.m */; };
+		E394062A16B6C0FA003385A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E394062916B6C0FA003385A3 /* AppDelegate.m */; };
+		E394062C16B6C0FA003385A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E394062B16B6C0FA003385A3 /* Default.png */; };
+		E394062E16B6C0FB003385A3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E394062D16B6C0FB003385A3 /* Default@2x.png */; };
+		E394063016B6C0FB003385A3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E394062F16B6C0FB003385A3 /* Default-568h@2x.png */; };
+		E394064316B6C193003385A3 /* PlayerReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E394064216B6C193003385A3 /* PlayerReader.m */; };
+		E394064616B6C19F003385A3 /* 03.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = E394064416B6C19F003385A3 /* 03.m3u8 */; };
+		E394064716B6C19F003385A3 /* tablet.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = E394064516B6C19F003385A3 /* tablet.m3u8 */; };
+		E394064916B6C1DC003385A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E394064816B6C1DC003385A3 /* UIKit.framework */; };
+		E394064C16B6C1F4003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E39405AD16B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a */; };
+		E394064F16B6C463003385A3 /* 01.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = E394064D16B6C463003385A3 /* 01.m3u8 */; };
+		E394065016B6C463003385A3 /* mosaic.m3u8 in Resources */ = {isa = PBXBuildFile; fileRef = E394064E16B6C463003385A3 /* mosaic.m3u8 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E39405C416B6BF7B003385A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E39405A416B6BF7B003385A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E39405AC16B6BF7B003385A3;
+			remoteInfo = pantosHTTPLiveStreamingEXTM3U;
+		};
+		E394064A16B6C1F1003385A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E39405A416B6BF7B003385A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E39405AC16B6BF7B003385A3;
+			remoteInfo = pantosHTTPLiveStreamingEXTM3U;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E39405AD16B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpantosHTTPLiveStreamingEXTM3U.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39405B016B6BF7B003385A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E39405B416B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pantosHTTPLiveStreamingEXTM3U-Prefix.pch"; sourceTree = "<group>"; };
+		E39405B516B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pantosHTTPLiveStreamingEXTM3U.h; sourceTree = "<group>"; };
+		E39405BE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pantosHTTPLiveStreamingEXTM3UTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39405BF16B6BF7B003385A3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E39405C916B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pantosHTTPLiveStreamingEXTM3UTests-Info.plist"; sourceTree = "<group>"; };
+		E39405CB16B6BF7B003385A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E39405CD16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pantosHTTPLiveStreamingEXTM3UTests.h; sourceTree = "<group>"; };
+		E39405CE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pantosHTTPLiveStreamingEXTM3UTests.m; sourceTree = "<group>"; };
+		E39405D916B6BF9B003385A3 /* EXTINF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTINF.h; sourceTree = "<group>"; };
+		E39405DA16B6BF9B003385A3 /* EXTINF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTINF.m; sourceTree = "<group>"; };
+		E39405DB16B6BF9B003385A3 /* EXTM3U.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTM3U.h; sourceTree = "<group>"; };
+		E39405DC16B6BF9B003385A3 /* EXTM3U.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTM3U.m; sourceTree = "<group>"; };
+		E39405DD16B6BF9B003385A3 /* EXTXKEY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTXKEY.h; sourceTree = "<group>"; };
+		E39405DE16B6BF9B003385A3 /* EXTXKEY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTXKEY.m; sourceTree = "<group>"; };
+		E39405DF16B6BF9B003385A3 /* EXTXMEDIASEQUENCE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTXMEDIASEQUENCE.h; sourceTree = "<group>"; };
+		E39405E016B6BF9B003385A3 /* EXTXMEDIASEQUENCE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTXMEDIASEQUENCE.m; sourceTree = "<group>"; };
+		E39405E116B6BF9B003385A3 /* EXTXSTREAMINF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTXSTREAMINF.h; sourceTree = "<group>"; };
+		E39405E216B6BF9B003385A3 /* EXTXSTREAMINF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTXSTREAMINF.m; sourceTree = "<group>"; };
+		E39405E316B6BF9B003385A3 /* EXTXTARGETDURATION.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTXTARGETDURATION.h; sourceTree = "<group>"; };
+		E39405E416B6BF9B003385A3 /* EXTXTARGETDURATION.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTXTARGETDURATION.m; sourceTree = "<group>"; };
+		E39405E516B6BF9B003385A3 /* EXTXVERSION.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTXVERSION.h; sourceTree = "<group>"; };
+		E39405E616B6BF9B003385A3 /* EXTXVERSION.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTXVERSION.m; sourceTree = "<group>"; };
+		E39405E716B6BF9B003385A3 /* RecordMarkerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordMarkerConstants.h; sourceTree = "<group>"; };
+		E394061916B6C0FA003385A3 /* PantosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantosDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E394061D16B6C0FA003385A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E394062116B6C0FA003385A3 /* PantosDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PantosDemo-Info.plist"; sourceTree = "<group>"; };
+		E394062316B6C0FA003385A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E394062516B6C0FA003385A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E394062716B6C0FA003385A3 /* PantosDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PantosDemo-Prefix.pch"; sourceTree = "<group>"; };
+		E394062816B6C0FA003385A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E394062916B6C0FA003385A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E394062B16B6C0FA003385A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E394062D16B6C0FB003385A3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E394062F16B6C0FB003385A3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E394064116B6C193003385A3 /* PlayerReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerReader.h; sourceTree = "<group>"; };
+		E394064216B6C193003385A3 /* PlayerReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerReader.m; sourceTree = "<group>"; };
+		E394064416B6C19F003385A3 /* 03.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 03.m3u8; sourceTree = "<group>"; };
+		E394064516B6C19F003385A3 /* tablet.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tablet.m3u8; sourceTree = "<group>"; };
+		E394064816B6C1DC003385A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E394064D16B6C463003385A3 /* 01.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 01.m3u8; sourceTree = "<group>"; };
+		E394064E16B6C463003385A3 /* mosaic.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mosaic.m3u8; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E39405AA16B6BF7B003385A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39405B116B6BF7B003385A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39405BA16B6BF7B003385A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39405C016B6BF7B003385A3 /* SenTestingKit.framework in Frameworks */,
+				E39405C316B6BF7B003385A3 /* Foundation.framework in Frameworks */,
+				E39405C616B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E394061616B6C0FA003385A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E394064C16B6C1F4003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a in Frameworks */,
+				E394064916B6C1DC003385A3 /* UIKit.framework in Frameworks */,
+				E394061C16B6C0FA003385A3 /* Foundation.framework in Frameworks */,
+				E394061E16B6C0FA003385A3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E39405A216B6BF7B003385A3 = {
+			isa = PBXGroup;
+			children = (
+				E39405B216B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */,
+				E39405C716B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests */,
+				E394061F16B6C0FA003385A3 /* PantosDemo */,
+				E39405AF16B6BF7B003385A3 /* Frameworks */,
+				E39405AE16B6BF7B003385A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E39405AE16B6BF7B003385A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E39405AD16B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a */,
+				E39405BE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.octest */,
+				E394061916B6C0FA003385A3 /* PantosDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E39405AF16B6BF7B003385A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E394064816B6C1DC003385A3 /* UIKit.framework */,
+				E39405B016B6BF7B003385A3 /* Foundation.framework */,
+				E39405BF16B6BF7B003385A3 /* SenTestingKit.framework */,
+				E394061D16B6C0FA003385A3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E39405B216B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */ = {
+			isa = PBXGroup;
+			children = (
+				E39405D816B6BF9B003385A3 /* pantos-http-live-streaming */,
+				E39405B516B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U.h */,
+				E39405B316B6BF7B003385A3 /* Supporting Files */,
+			);
+			path = pantosHTTPLiveStreamingEXTM3U;
+			sourceTree = "<group>";
+		};
+		E39405B316B6BF7B003385A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E39405B416B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E39405C716B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests */ = {
+			isa = PBXGroup;
+			children = (
+				E39405CD16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.h */,
+				E39405CE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.m */,
+				E39405C816B6BF7B003385A3 /* Supporting Files */,
+			);
+			path = pantosHTTPLiveStreamingEXTM3UTests;
+			sourceTree = "<group>";
+		};
+		E39405C816B6BF7B003385A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E39405C916B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests-Info.plist */,
+				E39405CA16B6BF7B003385A3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E39405D816B6BF9B003385A3 /* pantos-http-live-streaming */ = {
+			isa = PBXGroup;
+			children = (
+				E39405D916B6BF9B003385A3 /* EXTINF.h */,
+				E39405DA16B6BF9B003385A3 /* EXTINF.m */,
+				E39405DB16B6BF9B003385A3 /* EXTM3U.h */,
+				E39405DC16B6BF9B003385A3 /* EXTM3U.m */,
+				E39405DD16B6BF9B003385A3 /* EXTXKEY.h */,
+				E39405DE16B6BF9B003385A3 /* EXTXKEY.m */,
+				E39405DF16B6BF9B003385A3 /* EXTXMEDIASEQUENCE.h */,
+				E39405E016B6BF9B003385A3 /* EXTXMEDIASEQUENCE.m */,
+				E39405E116B6BF9B003385A3 /* EXTXSTREAMINF.h */,
+				E39405E216B6BF9B003385A3 /* EXTXSTREAMINF.m */,
+				E39405E316B6BF9B003385A3 /* EXTXTARGETDURATION.h */,
+				E39405E416B6BF9B003385A3 /* EXTXTARGETDURATION.m */,
+				E39405E516B6BF9B003385A3 /* EXTXVERSION.h */,
+				E39405E616B6BF9B003385A3 /* EXTXVERSION.m */,
+				E39405E716B6BF9B003385A3 /* RecordMarkerConstants.h */,
+			);
+			path = "pantos-http-live-streaming";
+			sourceTree = "<group>";
+		};
+		E394061F16B6C0FA003385A3 /* PantosDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E394064116B6C193003385A3 /* PlayerReader.h */,
+				E394064216B6C193003385A3 /* PlayerReader.m */,
+				E394062816B6C0FA003385A3 /* AppDelegate.h */,
+				E394062916B6C0FA003385A3 /* AppDelegate.m */,
+				E394062016B6C0FA003385A3 /* Supporting Files */,
+			);
+			path = PantosDemo;
+			sourceTree = "<group>";
+		};
+		E394062016B6C0FA003385A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E394064D16B6C463003385A3 /* 01.m3u8 */,
+				E394064E16B6C463003385A3 /* mosaic.m3u8 */,
+				E394064416B6C19F003385A3 /* 03.m3u8 */,
+				E394064516B6C19F003385A3 /* tablet.m3u8 */,
+				E394062116B6C0FA003385A3 /* PantosDemo-Info.plist */,
+				E394062216B6C0FA003385A3 /* InfoPlist.strings */,
+				E394062516B6C0FA003385A3 /* main.m */,
+				E394062716B6C0FA003385A3 /* PantosDemo-Prefix.pch */,
+				E394062B16B6C0FA003385A3 /* Default.png */,
+				E394062D16B6C0FB003385A3 /* Default@2x.png */,
+				E394062F16B6C0FB003385A3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E394060816B6BFF0003385A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E394060916B6BFF6003385A3 /* pantosHTTPLiveStreamingEXTM3U.h in Headers */,
+				E394060E16B6C09E003385A3 /* EXTINF.h in Headers */,
+				E394060F16B6C09E003385A3 /* EXTM3U.h in Headers */,
+				E394061016B6C09E003385A3 /* EXTXKEY.h in Headers */,
+				E394061116B6C09E003385A3 /* EXTXMEDIASEQUENCE.h in Headers */,
+				E394061216B6C09E003385A3 /* EXTXSTREAMINF.h in Headers */,
+				E394061316B6C09E003385A3 /* EXTXTARGETDURATION.h in Headers */,
+				E394061416B6C09E003385A3 /* EXTXVERSION.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E39405AC16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39405D216B6BF7B003385A3 /* Build configuration list for PBXNativeTarget "pantosHTTPLiveStreamingEXTM3U" */;
+			buildPhases = (
+				E39405A916B6BF7B003385A3 /* Sources */,
+				E39405AA16B6BF7B003385A3 /* Frameworks */,
+				E394060816B6BFF0003385A3 /* Headers */,
+				E394060716B6BFDE003385A3 /* PrepareFramework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pantosHTTPLiveStreamingEXTM3U;
+			productName = pantosHTTPLiveStreamingEXTM3U;
+			productReference = E39405AD16B6BF7B003385A3 /* libpantosHTTPLiveStreamingEXTM3U.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E39405BD16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39405D516B6BF7B003385A3 /* Build configuration list for PBXNativeTarget "pantosHTTPLiveStreamingEXTM3UTests" */;
+			buildPhases = (
+				E39405B916B6BF7B003385A3 /* Sources */,
+				E39405BA16B6BF7B003385A3 /* Frameworks */,
+				E39405BB16B6BF7B003385A3 /* Resources */,
+				E39405BC16B6BF7B003385A3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E39405C516B6BF7B003385A3 /* PBXTargetDependency */,
+			);
+			name = pantosHTTPLiveStreamingEXTM3UTests;
+			productName = pantosHTTPLiveStreamingEXTM3UTests;
+			productReference = E39405BE16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E394061816B6C0FA003385A3 /* PantosDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E394063A16B6C0FB003385A3 /* Build configuration list for PBXNativeTarget "PantosDemo" */;
+			buildPhases = (
+				E394061516B6C0FA003385A3 /* Sources */,
+				E394061616B6C0FA003385A3 /* Frameworks */,
+				E394061716B6C0FA003385A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E394064B16B6C1F1003385A3 /* PBXTargetDependency */,
+			);
+			name = PantosDemo;
+			productName = PantosDemo;
+			productReference = E394061916B6C0FA003385A3 /* PantosDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E39405A416B6BF7B003385A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Research2Development;
+			};
+			buildConfigurationList = E39405A716B6BF7B003385A3 /* Build configuration list for PBXProject "pantosHTTPLiveStreamingEXTM3U" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E39405A216B6BF7B003385A3;
+			productRefGroup = E39405AE16B6BF7B003385A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E39405AC16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */,
+				E39405BD16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests */,
+				E394061816B6C0FA003385A3 /* PantosDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E39405BB16B6BF7B003385A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39405CC16B6BF7B003385A3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E394061716B6C0FA003385A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E394062416B6C0FA003385A3 /* InfoPlist.strings in Resources */,
+				E394062C16B6C0FA003385A3 /* Default.png in Resources */,
+				E394062E16B6C0FB003385A3 /* Default@2x.png in Resources */,
+				E394063016B6C0FB003385A3 /* Default-568h@2x.png in Resources */,
+				E394064616B6C19F003385A3 /* 03.m3u8 in Resources */,
+				E394064716B6C19F003385A3 /* tablet.m3u8 in Resources */,
+				E394064F16B6C463003385A3 /* 01.m3u8 in Resources */,
+				E394065016B6C463003385A3 /* mosaic.m3u8 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E39405BC16B6BF7B003385A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		E394060716B6BFDE003385A3 /* PrepareFramework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = PrepareFramework;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/${FRAMEWORK_VERSION}/Headers\"\n\n# Link the \"Current\" version to \"${FRAMEWORK_VERSION}\"\nln -sfh ${FRAMEWORK_VERSION} \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\nln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\nln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\ncp -a \"${BUILT_PRODUCTS_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/${FRAMEWORK_VERSION}/Headers\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E39405A916B6BF7B003385A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39405E816B6BF9B003385A3 /* EXTINF.m in Sources */,
+				E39405E916B6BF9B003385A3 /* EXTM3U.m in Sources */,
+				E39405EA16B6BF9B003385A3 /* EXTXKEY.m in Sources */,
+				E39405EB16B6BF9B003385A3 /* EXTXMEDIASEQUENCE.m in Sources */,
+				E39405EC16B6BF9B003385A3 /* EXTXSTREAMINF.m in Sources */,
+				E39405ED16B6BF9B003385A3 /* EXTXTARGETDURATION.m in Sources */,
+				E39405EE16B6BF9B003385A3 /* EXTXVERSION.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39405B916B6BF7B003385A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39405CF16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3UTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E394061516B6C0FA003385A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E394062616B6C0FA003385A3 /* main.m in Sources */,
+				E394062A16B6C0FA003385A3 /* AppDelegate.m in Sources */,
+				E394064316B6C193003385A3 /* PlayerReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E39405C516B6BF7B003385A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E39405AC16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */;
+			targetProxy = E39405C416B6BF7B003385A3 /* PBXContainerItemProxy */;
+		};
+		E394064B16B6C1F1003385A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E39405AC16B6BF7B003385A3 /* pantosHTTPLiveStreamingEXTM3U */;
+			targetProxy = E394064A16B6C1F1003385A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E39405CA16B6BF7B003385A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E39405CB16B6BF7B003385A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E394062216B6C0FA003385A3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E394062316B6C0FA003385A3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E39405D016B6BF7B003385A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
+			};
+			name = Debug;
+		};
+		E39405D116B6BF7B003385A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7 armv7s i386";
+			};
+			name = Release;
+		};
+		E39405D316B6BF7B003385A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/pantosHTTPLiveStreamingEXTM3U.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pantosHTTPLiveStreamingEXTM3U/pantosHTTPLiveStreamingEXTM3U-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "${PROJECT_NAME}Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		E39405D416B6BF7B003385A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DSTROOT = /tmp/pantosHTTPLiveStreamingEXTM3U.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pantosHTTPLiveStreamingEXTM3U/pantosHTTPLiveStreamingEXTM3U-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "${PROJECT_NAME}Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		E39405D616B6BF7B003385A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pantosHTTPLiveStreamingEXTM3U/pantosHTTPLiveStreamingEXTM3U-Prefix.pch";
+				INFOPLIST_FILE = "pantosHTTPLiveStreamingEXTM3UTests/pantosHTTPLiveStreamingEXTM3UTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E39405D716B6BF7B003385A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "pantosHTTPLiveStreamingEXTM3U/pantosHTTPLiveStreamingEXTM3U-Prefix.pch";
+				INFOPLIST_FILE = "pantosHTTPLiveStreamingEXTM3UTests/pantosHTTPLiveStreamingEXTM3UTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		E394063B16B6C0FB003385A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode4.5.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PantosDemo/PantosDemo-Prefix.pch";
+				INFOPLIST_FILE = "PantosDemo/PantosDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E394063C16B6C0FB003385A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode4.5.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PantosDemo/PantosDemo-Prefix.pch";
+				INFOPLIST_FILE = "PantosDemo/PantosDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E39405A716B6BF7B003385A3 /* Build configuration list for PBXProject "pantosHTTPLiveStreamingEXTM3U" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39405D016B6BF7B003385A3 /* Debug */,
+				E39405D116B6BF7B003385A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E39405D216B6BF7B003385A3 /* Build configuration list for PBXNativeTarget "pantosHTTPLiveStreamingEXTM3U" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39405D316B6BF7B003385A3 /* Debug */,
+				E39405D416B6BF7B003385A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E39405D516B6BF7B003385A3 /* Build configuration list for PBXNativeTarget "pantosHTTPLiveStreamingEXTM3UTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39405D616B6BF7B003385A3 /* Debug */,
+				E39405D716B6BF7B003385A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E394063A16B6C0FB003385A3 /* Build configuration list for PBXNativeTarget "PantosDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E394063B16B6C0FB003385A3 /* Debug */,
+				E394063C16B6C0FB003385A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E39405A416B6BF7B003385A3 /* Project object */;
+}
