@@ -92,7 +92,9 @@
                 NSString *uri = [allString substringFromIndex:URIStart.location + URIStart.length];
                 NSRange uriEnd = [uri rangeOfString:COMMA];
                 if (uriEnd.location != NSNotFound)
-                    self.URI = [uri substringToIndex:uriEnd.location];
+                {
+                    self.URI = [[uri substringToIndex:uriEnd.location] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+                }
             }
 
             // Try and extract IV
@@ -123,7 +125,7 @@
     //#EXT-X-KEY:METHOD=AES-128,URI="https://www.example.com/369000.key",IV=0x00000000000000000000000000000000
     if (self.Method==AES128)
     {
-        return [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@",
+        return [NSString stringWithFormat:@"%@%@%@%@%@\"%@\"%@%@%@%@",
                 EXTXKEY_RECORDMARKER,
                 ENCRYPTION_METHOD_KEY,
                 self.Method==AES128?ENCRYPTION_METHOD_AES:ENCRYPTION_METHOD_NONE,
