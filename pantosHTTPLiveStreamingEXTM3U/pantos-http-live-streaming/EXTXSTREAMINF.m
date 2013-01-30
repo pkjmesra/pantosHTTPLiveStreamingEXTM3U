@@ -5,10 +5,10 @@
 /**
  Copyright (c) 2011, Research2Development Inc.
  All rights reserved.
-
+ 
  Redistribution and use in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
-
+ 
  Redistributions of source code must retain the above copyright notice, this list
  of conditions and the following disclaimer.
  Redistributions in binary form must reproduce the above copyright notice, this
@@ -57,7 +57,7 @@
 -(EXTXSTREAMINF*)initWithString:(NSString*)extInfRecordMarker
 {
     self = [super init];
-
+    
     if (self)
     {
         if (![extInfRecordMarker hasPrefix:HASH])
@@ -77,17 +77,13 @@
             {
                 NSString *bandwidth = [allString substringFromIndex:bandwidthStart.location + bandwidthStart.length];
                 NSRange bandwidthEnd = [bandwidth rangeOfString:COMMA];
+                NSRange bandwidthEndCRLF = [bandwidth rangeOfString:CR];
                 if (bandwidthEnd.location != NSNotFound)
                 {
                     self.bandwidth = [[bandwidth substringToIndex:bandwidthEnd.location] intValue];
-                }
-                else
+                }else if(bandwidthEndCRLF.location != NSNotFound)
                 {
-                    bandwidthEnd = [bandwidth rangeOfString:CrLf];
-                    if (bandwidthEnd.location != NSNotFound)
-                    {
-                        self.bandwidth = [[bandwidth substringToIndex:bandwidthEnd.location] intValue];
-                    }
+                    self.bandwidth = [[bandwidth substringToIndex:bandwidthEndCRLF.location] intValue];
                 }
             }
             // try and extract program-id
@@ -108,7 +104,7 @@
                 if (resolutionEnd.location != NSNotFound)
                     self.resolution = [resolution substringToIndex:resolutionEnd.location];
             }
-
+            
             // Try and extract codecs
             NSRange codecsStart = [allString rangeOfString:STREAMINF_CODECS_KEY];
             if (codecsStart.location != NSNotFound)
@@ -118,7 +114,7 @@
                 if (codecsEnd.location != NSNotFound)
                     self.codecs = [codecs substringToIndex:codecsEnd.location];
             }
-
+            
             NSRange startcrlf = [extInfRecordMarker rangeOfString:CrLf];
             NSString *titleString = [extInfRecordMarker substringFromIndex:startcrlf.location + startcrlf.length];
             NSRange endcrlf = [titleString rangeOfString:CrLf];
@@ -149,57 +145,42 @@
 {
     //#EXT-X-STREAM-INF:PROGRAM-ID=119,BANDWIDTH=748992,RESOLUTION=544x480,CODECS="avc1.42e01e,mp4a.40.2"
     //03.m3u8
-    NSString *finalVariant =EXTXSTREAMINF_RECORDMARKER;
-    if (self.programID >0)
+    //    return [NSString stringWithFormat:@"%@%@%d%@%@%d%@%@%@%@%@%@%@%@%@",
+    //            EXTXSTREAMINF_RECORDMARKER,
+    //            STREAMINF_PROGRAMID_KEY,
+    //            self.programID,
+    //            COMMA,
+    //            STREAMINF_BANDWIDTH_KEY,
+    //            self.bandwidth,
+    //            COMMA,
+    //            STREAMINF_RESOLUTION_KEY,
+    //            self.resolution,
+    //            COMMA,
+    //            STREAMINF_CODECS_KEY,
+    //            self.codecs,
+    //            CrLf,
+    //            self.variantPlaylistURI,
+    //            CrLf];
+    NSMutableString* str = [NSMutableString string];
+    [str appendFormat:@"%@%@%d%@%@%d",
+     EXTXSTREAMINF_RECORDMARKER,
+     STREAMINF_PROGRAMID_KEY,
+     self.programID,
+     COMMA,
+     STREAMINF_BANDWIDTH_KEY,
+     self.bandwidth];
+    if(self.resolution)
     {
-        finalVariant = [finalVariant stringByAppendingString:[NSString stringWithFormat:@"%@%d",STREAMINF_PROGRAMID_KEY, self.programID]];
+        [str appendFormat:@"%@%@%@",COMMA,STREAMINF_RESOLUTION_KEY,self.resolution];
     }
-    if (self.bandwidth >0)
+    if(self.codecs)
     {
-        if ([finalVariant rangeOfString:STREAMINF_PROGRAMID_KEY].length >0)
-        {
-            finalVariant =[finalVariant stringByAppendingString:COMMA];
-        }
-        finalVariant = [finalVariant stringByAppendingString:[NSString stringWithFormat:@"%@%d",STREAMINF_BANDWIDTH_KEY, self.bandwidth]];
+        [str appendFormat:@"%@%@%@",COMMA,STREAMINF_CODECS_KEY,self.codecs];
     }
-    if ([self.resolution length]>0)
-    {
-        if ([finalVariant rangeOfString:STREAMINF_PROGRAMID_KEY].length >0)
-        {
-            finalVariant =[finalVariant stringByAppendingString:COMMA];
-        }
-        finalVariant = [finalVariant stringByAppendingString:[NSString stringWithFormat:@"%@%@",STREAMINF_RESOLUTION_KEY, self.resolution]];
-    }
-    if ([self.codecs length]>0)
-    {
-        if ([finalVariant rangeOfString:STREAMINF_PROGRAMID_KEY].length >0)
-        {
-            finalVariant =[finalVariant stringByAppendingString:COMMA];
-        }
-        finalVariant = [finalVariant stringByAppendingString:[NSString stringWithFormat:@"%@%@",STREAMINF_CODECS_KEY, self.codecs]];
-    }
-    finalVariant =[finalVariant stringByAppendingString:CrLf];
-    finalVariant =[finalVariant stringByAppendingString:self.variantPlaylistURI];
-    finalVariant =[finalVariant stringByAppendingString:CrLf];
-    return finalVariant;
-/*
-    return [NSString stringWithFormat:@"%@%@%d%@%@%d%@%@%@%@%@%@%@%@%@",
-            EXTXSTREAMINF_RECORDMARKER,
-            STREAMINF_PROGRAMID_KEY,
-            self.programID,
-            COMMA,
-            STREAMINF_BANDWIDTH_KEY,
-            self.bandwidth,
-            COMMA,
-            STREAMINF_RESOLUTION_KEY,
-            self.resolution,
-            COMMA,
-            STREAMINF_CODECS_KEY,
-            self.codecs,
-            CrLf,
-            self.variantPlaylistURI,
-            CrLf];
- */
+    [str appendString:CrLf];
+    [str appendString:self.variantPlaylistURI];
+    [str appendString:CrLf];
+    return str;
 }
 
 @end
