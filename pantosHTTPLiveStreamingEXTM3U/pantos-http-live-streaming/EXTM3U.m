@@ -3,7 +3,7 @@
 //  PlayerFileParsing
 //
 /**
- Copyright (c) 2011, Praveen K Jha.
+ Copyright (c) 2011, Research2Development Inc.
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without modification,
@@ -14,7 +14,7 @@
  Redistributions in binary form must reproduce the above copyright notice, this
  list of conditions and the following disclaimer in the documentation and/or other
  materials provided with the distribution.
- Neither the name of the Praveen K Jha. nor the names of its contributors may be
+ Neither the name of the Research2Development Inc. nor the names of its contributors may be
  used to endorse or promote products derived from this software without specific
  prior written permission.
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
@@ -135,7 +135,15 @@
                         else if ([eachLine hasPrefix:EXTXKEY_RECORDMARKER])
                         {
                             EXTXKEY *k =[[EXTXKEY alloc] initWithString:[eachLine stringByAppendingString:CrLf]];
-                            self.key = k;
+                            if ([variants count]>0)
+                            {
+                                // Append the key to the last variant
+                                // This may happen when there is a key change for this variant ts file
+                                EXTINF *lastInf =[variants lastObject];
+                                lastInf.key = k;
+                            }
+                            else
+                                self.key = k;
                         }
                         else if ([eachLine hasPrefix:EXTINF_RECORDMARKER])
                         {
