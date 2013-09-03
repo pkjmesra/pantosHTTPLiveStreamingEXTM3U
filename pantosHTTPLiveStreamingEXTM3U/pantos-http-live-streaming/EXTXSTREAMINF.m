@@ -40,6 +40,7 @@
     int                     _bandwidth;
     int                     _programId;
     NSString                *_codecs;
+    NSString                *_audio;
     NSString                *_variantPlaylistURI;
     NSString                *_resolution;
     NSString                *_playlistURIExtension;
@@ -50,6 +51,7 @@
 @synthesize bandwidth=_bandwidth;
 @synthesize programID=_programId;
 @synthesize codecs=_codecs;
+@synthesize audio=_audio;
 @synthesize variantPlaylistURI=_variantPlaylistURI;
 @synthesize resolution=_resolution;
 @synthesize playlistURIExtension=_playlistURIExtension;
@@ -114,7 +116,16 @@
                 if (codecsEnd.location != NSNotFound)
                     self.codecs = [codecs substringToIndex:codecsEnd.location];
             }
-            
+            // Try and extract audio
+            NSRange audioStart = [allString rangeOfString:STREAMINF_AUDIO_KEY];
+            if (audioStart.location != NSNotFound)
+            {
+                NSString *audios = [allString substringFromIndex:audioStart.location + audioStart.length];
+                NSRange audiosEnd = [audios rangeOfString:CrLf];
+                if (audiosEnd.location != NSNotFound)
+                    self.audio = [audios substringToIndex:audiosEnd.location];
+            }
+
             NSRange startcrlf = [extInfRecordMarker rangeOfString:CrLf];
             NSString *titleString = [extInfRecordMarker substringFromIndex:startcrlf.location + startcrlf.length];
             NSRange endcrlf = [titleString rangeOfString:CrLf];
@@ -176,6 +187,10 @@
     if(self.codecs)
     {
         [str appendFormat:@"%@%@%@",COMMA,STREAMINF_CODECS_KEY,self.codecs];
+    }
+    if(self.audio)
+    {
+        [str appendFormat:@"%@%@%@",COMMA,STREAMINF_AUDIO_KEY,self.audio];
     }
     [str appendString:CrLf];
     [str appendString:self.variantPlaylistURI];

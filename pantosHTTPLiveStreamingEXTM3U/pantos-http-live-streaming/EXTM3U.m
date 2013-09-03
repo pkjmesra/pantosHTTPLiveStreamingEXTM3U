@@ -46,6 +46,8 @@
     EXTXKEY *_key;
     //! An array of EXTINF objects
     NSArray *_media;
+    //! An array of EXTXMEDIA objects
+    NSArray *_masterMedia;
     NSString *_playlistContent;
 
 }
@@ -61,6 +63,7 @@
 @synthesize key=_key;
 @synthesize media=_media;
 @synthesize playlistContent=_playlistContent;
+@synthesize masterMedia=_masterMedia;
 
 -(EXTM3U*)initWithString:(NSString*)fileContents
 {
@@ -87,8 +90,46 @@
             {
                 self.master =YES;
             }
+
             if (self.isMaster) // master playlist
             {
+                // Check to see if it has #EXT-X-VERSION and/or #EXT-X-MEDIA tags
+                // if so let's resolve them first
+
+                NSArray *preStreamInfos = [self.playlistContent componentsSeparatedByString:CrLf];
+                self.playlistContent =@"";
+                NSMutableArray *allAudioMediaInfos =[NSMutableArray arrayWithCapacity:0];
+                for (int index=0;index<preStreamInfos.count;index++)
+                {
+                    NSString *eachLine = [preStreamInfos objectAtIndex:index];
+                    if ([eachLine length]>0)
+                    {
+                        if ([eachLine hasPrefix:EXTXVERSION_RECORDMARKER])
+                        {
+                            EXTXVERSION *v = [[EXTXVERSION alloc] initWithString:[eachLine stringByAppendingString:CrLf]];
+                            self.version = v;
+                        }
+                        else if ([eachLine hasPrefix:EXTXMEDIA_RECORDMARKER])
+                        {
+                            EXTXMEDIA *t =[[EXTXMEDIA alloc] initWithString:[eachLine stringByAppendingString:CrLf]];
+                            [allAudioMediaInfos addObject:t];
+                        }
+                        else
+                        {
+                            // We've reached the end of all audio sequence
+                            if ([self.playlistContent length] <=0)
+                            {
+                                self.playlistContent =[NSString stringWithFormat:@"%@%@", eachLine, CrLf];
+                            }
+                            else
+                            {
+                                self.playlistContent =[NSString stringWithFormat:@"%@%@%@", self.playlistContent,eachLine, CrLf];
+                            }
+                        }
+                    }
+                }
+                self.masterMedia = allAudioMediaInfos;
+                
                 NSArray *mediaStreamInfos = [self.playlistContent componentsSeparatedByString:EXTXSTREAMINF_RECORDMARKER];
                 if ([mediaStreamInfos count]>0)
                 {
@@ -175,10 +216,42 @@
 
 -(NSString*)description
 {
+    /*
+     #EXTM3U
+     #EXT-X-STREAM-INF:PROGRAM-ID=133,BANDWIDTH=440672
+     02.m3u8
+     #EXT-X-STREAM-INF:PROGRAM-ID=133,BANDWIDTH=748992
+     03.m3u8
+     #EXT-X-STREAM-INF:PROGRAM-ID=133,BANDWIDTH=1057312
+     04.m3u8
+     */
+    // or
+    /*
+     #EXTM3U
+     #EXT-X-VERSION:4
+     #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="group00",NAME="pri",DEFAULT=YES,AUTOSELECT=YES,URI="08.m3u8"
+     #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="group00",NAME="sec",DEFAULT=NO,AUTOSELECT=YES,URI="11.m3u8"
+     #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="group01",NAME="pri",DEFAULT=YES,AUTOSELECT=YES,URI="09.m3u8"
+     #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="group01",NAME="sec",DEFAULT=NO,AUTOSELECT=YES,URI="12.m3u8"
+     #EXT-X-STREAM-INF:PROGRAM-ID=707,BANDWIDTH=452704,AUDIO="group00"
+     02.m3u8
+     #EXT-X-STREAM-INF:PROGRAM-ID=707,BANDWIDTH=854272,AUDIO="group01"
+     03.m3u8
+     */
     NSString *finalVariant =[EXTM3U_RECORDMARKER stringByAppendingString:CrLf];
     if (self.isMaster)
     {
-        // master playlist
+        if (self.version)
+        {
+            finalVariant = [finalVariant stringByAppendingString:[self.version description]];
+        }
+        // master playlist with audio SAP media
+        NSString *allAudioStreamListInfs = [self.masterMedia componentsJoinedByString:@""];
+        if ([allAudioStreamListInfs length]>0)
+        {
+            finalVariant = [finalVariant stringByAppendingString:allAudioStreamListInfs];
+        }
+        // master playlist with variant info
         NSString *allStreamListInfs = [self.variantPlaylists componentsJoinedByString:@""];
         if ([allStreamListInfs length]>0)
         {

@@ -110,6 +110,8 @@
  http://example.com/hi.m3u8
  #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=65000,CODECS="mp4a.40.5"
  http://example.com/audio-only.m3u8
+ #EXT-X-STREAM-INF:PROGRAM-ID=707,BANDWIDTH=452704,AUDIO="group00"
+ 02.m3u8
  */
 
 #import <Foundation/Foundation.h>
@@ -118,6 +120,7 @@
 
 @property (nonatomic, assign) int bandwidth;
 @property (nonatomic, assign) int programID;
+@property (nonatomic, strong) NSString *audio;
 @property (nonatomic, strong) NSString *codecs;
 @property (nonatomic, strong) NSString *variantPlaylistURI;
 @property (nonatomic, strong) NSString *resolution;
